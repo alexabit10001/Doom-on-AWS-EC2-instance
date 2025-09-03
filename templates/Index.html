@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doom Docker</title>
+
+    <!-- js-dos CSS -->
+    <link rel="stylesheet" href="https://v8.js-dos.com/latest/js-dos.css">
+
+    <!-- js-dos JS -->
+    <script src="https://v8.js-dos.com/latest/js-dos.js"></script>
+</head>
+<body>
+    <h1>Doom in Browser!</h1>
+    <div id="dos" style="width: 100vw; height: 60vw;"></div>
+
+    <script>
+        Dos(document.getElementById("dos"), {
+            url: "{{ url_for('static', filename='doom.jsdos') }}",
+            onError: function(err) { console.log("Error loading WAD:", err); }
+        });
+    </script>
+
+</body>
+</html>
